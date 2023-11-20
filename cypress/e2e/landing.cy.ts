@@ -1,7 +1,9 @@
-describe("template spec", () => {
-  it("passes", () => {
+describe("When a user navigates to the landing page", () => {
+  beforeEach(() => {
     cy.visit("http://localhost:3000");
+  });
 
-    cy.contains("Page Load").should("be.visible");
+  it("should display the header", () => {
+    cy.get('[data-testid="Header"]').should("be.visible");
   });
 });
